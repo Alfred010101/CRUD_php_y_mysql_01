@@ -46,18 +46,27 @@
                         <th scope="col"></th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>Otto</td>
+                <tbody>                    
+                    <?php
+                        include "modelo/conexion.php";
+                        $sql = $conexion->query(" select * from usuarios ");
+                        while($datos = $sql->fetch_object())
+                        {                            
+                    ?>
+                        <tr>
+                        <td><?= $datos->id_persona ?></td>
+                        <td><?= $datos->nombre_s ?></td>
+                        <td><?= $datos->apellidos ?></td>
+                        <td><?= $datos->fecha_nac ?></td>
+                        <td><?= $datos->correo ?></td>                        
                         <td>
                             <span class="material-icons btn btn-small btn-warning" title="Editar">edit</span>
                             <span class="material-icons btn btn-small btn-danger" title="Eliminar">delete</span>
                         </td>
-                    </tr>
+                        </tr>
+                    <?php
+                        }
+                    ?>                    
                 </tbody>
             </table>
         </div>
