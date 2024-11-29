@@ -9,8 +9,12 @@
 </head>
 <body>
     <div class="container-fluid row">
-        <form class="col-4 p-3">
+        <form class="col-4 p-3" method="POST">
             <h3 class="text-center text-secondary">Registro de Personas</h3>
+            <?php
+                include "modelo/conexion.php";
+                include "controlador/registro_personas.php";
+            ?>
             <div class="mb-3">
                 <label for="nombrePersona" class="form-label">Nombre</label>
                 <input type="text" class="form-control" id="nombrePersona" name="nombre">
@@ -28,7 +32,7 @@
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Correo</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="correo">
                 <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
             </div>
             <button type="submit" class="btn btn-primary" name="btnRegistar" value="OK">Registar</button>
