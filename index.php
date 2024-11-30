@@ -64,7 +64,7 @@
                         <td><?= $datos->fecha_nac ?></td>
                         <td><?= $datos->correo ?></td>                        
                         <td>
-                            <span class="material-icons btn btn-small btn-warning" title="Editar">edit</span>
+                            <a href="modificar_personas.php?id=<?= $datos->id_persona ?>" class="material-icons btn btn-small btn-warning" title="Editar">edit</a>
                             <span class="material-icons btn btn-small btn-danger" title="Eliminar">delete</span>
                         </td>
                         </tr>
